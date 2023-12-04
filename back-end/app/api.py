@@ -27,19 +27,21 @@ async def read_root() -> dict:
 todos = [
     {
         'id': '1',
-        'team': 'Futbol'
+        'team': 'Futbol',
+        'img': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQxPX48l23CuZ07EmpoYxQAOk_uTHfHF8hMw&usqp=CAU'
     },
     {
         'id': '2',
-        'team': 'Basquetbol'
+        'team': 'Basquetbol',
     },
     {
         'id': '3',
-        'team': 'Tenis'
+        'team': 'Tenis',
+        'img': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSijeKwZsWDUeByFK53yJAZVfTPHOIUWwOZg&usqp=CAU'
     },
     {
         'id': '4',
-        'team': 'Natacion'
+        'team': 'Natacion',
     }
 ]
 
@@ -68,6 +70,7 @@ async def update_todo(id: int, body: dict) -> dict:
     for todo in todos:
         if int(todo["id"]) == id:
             todo["team"] = body["team"]
+            # todo["img"] = body["img"]
             return {
                 "data": f"Todo with id {id} has been updated."
             }
